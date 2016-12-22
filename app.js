@@ -28,21 +28,25 @@ $('#ProfessorPlum').click((e) => {
 $('#ReverendGreen').click((e) => {
   $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.teal-green.min.css';
   $("#title")[0].innerHTML = 'Reverend Green';
+  $("#mobilecolor")[0].content = '#009688';
 });
 
 $('#MrsPeacock').click((e) => {
   $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.light_blue-indigo.min.css';
   $("#title")[0].innerHTML = 'Mrs Peacock';
+  $("#mobilecolor")[0].content = '#03A9F4';
 });
 
 $('#MissScarlett').click((e) => {
   $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.red-orange.min.css';
   $("#title")[0].innerHTML = 'Miss Scarlett';
+  $("#mobilecolor")[0].content = '#F44336';
 });
 
 $('#MrsWhite').click((e) => {
   $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.grey-light_blue.min.css';
   $("#title")[0].innerHTML = 'Mrs White';
+  $("#mobilecolor")[0].content = '#B0BEC5';
 });
 
 $('.fab').click((e) => {
