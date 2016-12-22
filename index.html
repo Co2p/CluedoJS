@@ -6,6 +6,7 @@
   <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" id="css" href="https://code.getmdl.io/1.2.1/material.blue_grey-red.min.css">
+  <link rel="stylesheet" href="style.css">
   <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" name="viewport">
   <meta name="theme-color" content="#F5841F">
@@ -18,7 +19,7 @@
   <link rel="apple-touch-icon-precomposed" href="iosfav.png" />
 </head>
 <body>
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <!-- Title -->
@@ -29,164 +30,168 @@
         <a href="#suspects" class="mdl-layout__tab is-active">Suspect</a>
         <a href="#weapons" class="mdl-layout__tab">Weapon</a>
         <a href="#rooms" class="mdl-layout__tab">Room</a>
-        <a href="#hidden" class="mdl-layout__tab"><i class="material-icons">visibility_off</i></a>
       </div>
     </header>
     <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Choose Character</span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" id="ColonelMustard">Colonel Mustard</a>
-      <a class="mdl-navigation__link" id="ProfessorPlum">Professor Plum</a>
-      <a class="mdl-navigation__link" id="ReverendGreen">Reverend Green</a>
-      <a class="mdl-navigation__link" id="MrsPeacock">Mrs Peacock</a>
-      <a class="mdl-navigation__link" id="MissScarlett">Miss Scarlett</a>
-      <a class="mdl-navigation__link" id="MrsWhite">Mrs White</a>
-    </nav>
-  </div>
+      <span class="mdl-layout-title">Choose Character</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" id="ColonelMustard">Colonel Mustard</a>
+        <a class="mdl-navigation__link" id="ProfessorPlum">Professor Plum</a>
+        <a class="mdl-navigation__link" id="ReverendGreen">Reverend Green</a>
+        <a class="mdl-navigation__link" id="MrsPeacock">Mrs Peacock</a>
+        <a class="mdl-navigation__link" id="MissScarlett">Miss Scarlett</a>
+        <a class="mdl-navigation__link" id="MrsWhite">Mrs White</a>
+      </nav>
+    </div>
     <main class="mdl-layout__content">
       <div class="page-content">
-        <section class="mdl-layout__tab-panel is-active" id="suspects">
-          <ul class="demo-list-icon mdl-list">
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Colonel Mustard
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Professor Plum
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Reverend Green
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Mrs Peacock
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Miss Scarlett
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Mrs White
-              </span>
-            </li>
-          </ul>
-        </section>
-        <section class="mdl-layout__tab-panel" id="weapons">
-          <ul class="demo-list-icon mdl-list">
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Dagger
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Candlestick
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Revolver
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Rope
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Lead Pipe
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Spanner
-              </span>
-            </li>
-          </ul>
-        </section>
-        <section class="mdl-layout__tab-panel" id="rooms">
-          <ul class="demo-list-icon mdl-list">
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Hall
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Lounge
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Dining Room
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Kitchen
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Ballroom
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Consevatory
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Billiard Room
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Library
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
-                Study
-              </span>
-            </li>
-          </ul>
-        </section>
-        <section class="mdl-layout__tab-panel" id="hidden">
-          <h1 class="center">Cluedo</h1>
-        </section>
+        <div id="cardTabs">
+          <section class="mdl-layout__tab-panel is-active" id="suspects">
+            <ul class="demo-list-icon mdl-list">
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Colonel Mustard
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Professor Plum
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Reverend Green
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Mrs Peacock
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Miss Scarlett
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Mrs White
+                </span>
+              </li>
+            </ul>
+          </section>
+          <section class="mdl-layout__tab-panel" id="weapons">
+            <ul class="demo-list-icon mdl-list">
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Dagger
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Candlestick
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Revolver
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Rope
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Lead Pipe
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Spanner
+                </span>
+              </li>
+            </ul>
+          </section>
+          <section class="mdl-layout__tab-panel" id="rooms">
+            <ul class="demo-list-icon mdl-list">
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Hall
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Lounge
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Dining Room
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Kitchen
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Ballroom
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Consevatory
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Billiard Room
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Library
+                </span>
+              </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">check_box_outline_blank</i>
+                  Study
+                </span>
+              </li>
+            </ul>
+          </section>
+          <section class="mdl-layout__tab-panel" id="hidden">
+            <h1 class="center">Cluedo</h1>
+          </section>
+        </div>
       </div>
+      <button href="#hidden" class="fab mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        <i id="fabicon" class="material-icons">visibility_off</i>
+      </button>
     </main>
   </div>
   <script type="text/javascript" src="app.js"></script>

@@ -43,3 +43,12 @@ $('#MrsWhite').click((e) => {
   $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.grey-light_blue.min.css';
   $("#title")[0].innerHTML = 'Mrs White';
 });
+
+$('.fab').click((e) => {
+  $("#cardTabs").toggle();
+  if ($('#fabicon')[0].textContent === 'visibility_off') {
+    $('#fabicon')[0].textContent = 'visibility';
+  } else {
+    $('#fabicon')[0].textContent = 'visibility_off';
+  }
+});
