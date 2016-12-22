@@ -15,24 +15,31 @@ window.onbeforeunload = function() {
 
 $('#ColonelMustard').click((e) => {
   $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.amber-red.min.css';
+  console.log($("#title")[0].innerHTML);
+  $("#title")[0].innerHTML = 'Colonel Mustard';
 });
 
 $('#ProfessorPlum').click((e) => {
   $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.deep_purple-red.min.css';
+  $("#title")[0].innerHTML = 'Professor Plum';
 });
 
 $('#ReverendGreen').click((e) => {
   $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.green-light_green.min.css';
+  $("#title")[0].innerHTML = 'Reverend Green';
 });
 
 $('#MrsPeacock').click((e) => {
   $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.light_blue-indigo.min.css';
+  $("#title")[0].innerHTML = 'Mrs Peacock';
 });
 
 $('#MissScarlett').click((e) => {
   $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.red-orange.min.css';
+  $("#title")[0].innerHTML = 'Miss Scarlett';
 });
 
 $('#MrsWhite').click((e) => {
   $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.grey-light_blue.min.css';
+  $("#title")[0].innerHTML = 'Mrs White';
 });

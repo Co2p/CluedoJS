@@ -22,17 +22,18 @@
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <!-- Title -->
-        <span class="mdl-layout-title">CluedoCardsJS</span>
+        <span class="mdl-layout-title" id="title">CluedoCardsJS</span>
       </div>
       <!-- Tabs -->
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
         <a href="#suspects" class="mdl-layout__tab is-active">Suspect</a>
         <a href="#weapons" class="mdl-layout__tab">Weapon</a>
         <a href="#rooms" class="mdl-layout__tab">Room</a>
+        <a href="#hidden" class="mdl-layout__tab"><i class="material-icons">visibility_off</i></a>
       </div>
     </header>
     <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Title</span>
+    <span class="mdl-layout-title">Choose Character</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" id="ColonelMustard">Colonel Mustard</a>
       <a class="mdl-navigation__link" id="ProfessorPlum">Professor Plum</a>
@@ -181,6 +182,9 @@
               </span>
             </li>
           </ul>
+        </section>
+        <section class="mdl-layout__tab-panel" id="hidden">
+          <h1 class="center">Cluedo</h1>
         </section>
       </div>
     </main>
