@@ -15,7 +15,6 @@ window.onbeforeunload = function() {
 
 $('#ColonelMustard').click((e) => {
   $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.amber-red.min.css';
-  console.log($("#title")[0].innerHTML);
   $("#title")[0].innerHTML = 'Colonel Mustard';
 });
 
@@ -25,7 +24,7 @@ $('#ProfessorPlum').click((e) => {
 });
 
 $('#ReverendGreen').click((e) => {
-  $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.green-light_green.min.css';
+  $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.teal-green.min.css';
   $("#title")[0].innerHTML = 'Reverend Green';
 });
 
