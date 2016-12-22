@@ -16,11 +16,13 @@ window.onbeforeunload = function() {
 $('#ColonelMustard').click((e) => {
   $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.amber-red.min.css';
   $("#title")[0].innerHTML = 'Colonel Mustard';
+  $("#mobilecolor")[0].content = '#FF9800';
 });
 
 $('#ProfessorPlum').click((e) => {
   $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.deep_purple-red.min.css';
   $("#title")[0].innerHTML = 'Professor Plum';
+  $("#mobilecolor")[0].content = '#673AB7';
 });
 
 $('#ReverendGreen').click((e) => {
