@@ -1,24 +1,24 @@
 const themes = {
-  "Mustard": [ "amber", "red" , "Colonel Mustard"],
-  "Plum": [ "deep_purple", "pink", "Professor Plum"],
-  "Green": [ "teal", "green", "Reverend Green"],
-  "Peacock": [ "light_blue", "indigo", "Mrs Peacock"],
-  "Scarlett": [ "red", "orange", "Miss Scarlett"],
-  "White": [ "grey", "light_blue", "Mrs White"]
+  "Mustard": { "primary": "amber", "secondary": "red" , "name": "Colonel Mustard"},
+  "Plum": { "primary": "deep_purple", "secondary": "pink", "name": "Professor Plum"},
+  "Green": { "primary": "teal", "secondary": "green", "name": "Reverend Green"},
+  "Peacock": { "primary": "light_blue", "secondary": "indigo", "name": "Mrs Peacock"},
+  "Scarlett": { "primary": "red", "secondary": "orange", "name": "Miss Scarlett"},
+  "White": { "primary": "grey", "secondary": "light_blue", "name": "Mrs White"}
 }
 
 function setTheme(theme) {
   if (theme != undefined) {
     theme = themes[theme];
     console.log(theme);
-    $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.' + theme[0] + '-' + theme[1] + '.min.css';
-    $("#title")[0].innerHTML = theme[2];
-    $("#mobilecolor")[0].content = 'mdl-color--' + theme[0];
+    $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.' + theme.primary + '-' + theme.secondary + '.min.css';
+    $("#title")[0].innerHTML = theme.name;
+    //TODO translate to hex?
+    $("#mobilecolor")[0].content = 'mdl-color--' + theme.primary;
   }
 }
 
 $('.set_character').click((e) => {
   setTheme(e.target.id);
   Cookies.set('theme', e.target.id, { expires: 60 });
-  console.log(Cookies.get('theme'));
 });
