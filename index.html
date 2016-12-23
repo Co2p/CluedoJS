@@ -26,8 +26,8 @@
         <span class="mdl-layout-title" id="title">CluedoCardsJS</span>
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">
-            <about class="material-icons">help</about>
+          <a class="mdl-navigation__link">
+            <about class="material-icons show-modal">help</about>
           </a>
         </nav>
       </div>
@@ -200,6 +200,36 @@
       </button>
     </main>
   </div>
+  <dialog class="mdl-dialog">
+    <div class="mdl-dialog__title">
+      About
+    </div>
+    <div class="mdl-dialog__content">
+      <p>
+        A simple mobile-first webapp that replaces the suspect cards when playing playing Cluedo (Clue).
+      </p>
+      <p>
+        Sourcecode is available on <a href="https://github.com/Co2p/CluedoCardJS">GitHub</a>
+        Suggestions and help is welcome.
+      </p>
+    </div>
+    <div class="mdl-dialog__actions ">
+      <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect close">ok</button>
+    </div>
+  </dialog>
+  <script>
+    var dialog = document.querySelector('dialog');
+    var showModalButton = document.querySelector('.show-modal');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showModalButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+  </script>
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="characterThemes.js"></script>
 </body>
