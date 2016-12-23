@@ -1,3 +1,5 @@
+window.addEventListener('load', () => setTheme(Cookies.get('theme')), false);
+
 $('i').click((e) => {
   var currentIcon = e.currentTarget.innerHTML;
   if (currentIcon == 'remove_circle') {
