@@ -43,7 +43,7 @@ $('#MissScarlett').click((e) => {
 });
 
 $('#MrsWhite').click((e) => {
-  $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.' + WhitePrimary '-' + WhiteSecondary + '.min.css';
+  $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.' + WhitePrimary + '-' + WhiteSecondary + '.min.css';
   $("#title")[0].innerHTML = 'Mrs White';
   $("#mobilecolor")[0].content = '#B0BEC5';
 });
