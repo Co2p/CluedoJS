@@ -18,7 +18,9 @@ window.onbeforeunload = function() {
 }
 
 $('.fab').click((e) => {
-  $("#cardTabs").toggle();
+  $("#tabContent").toggle();
+  $("#tabs").toggle();
+  $("#hidden").toggle();
   if ($('#fabicon')[0].textContent === 'visibility_off') {
     $('#fabicon')[0].textContent = 'visibility';
   } else {
