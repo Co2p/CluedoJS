@@ -4,3 +4,5 @@ The webpage is available [here](https://co2p.github.io/CluedoCardJS/)
 
 ## Made with
 [Material Design Lite](https://getmdl.io)
+
+![](./favicon.png)
