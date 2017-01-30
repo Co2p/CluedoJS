@@ -8,7 +8,8 @@ this.addEventListener('install', function(event) {
         '/CluedoCardJS/app.js',
         '/CluedoCardJS/js.cookie.js',
         '/CluedoCardJS/favicon.png',
-        '/CluedoCardJS/characterThemes.js'
+        '/CluedoCardJS/characterThemes.js',
+        'https://code.jquery.com/jquery-3.1.0.min.js'
       ]);
     })
   );
