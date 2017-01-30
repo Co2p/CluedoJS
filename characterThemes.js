@@ -10,10 +10,8 @@ const themes = {
 function setTheme(theme) {
   if (theme != undefined) {
     theme = themes[theme];
-    console.log(theme);
     $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.' + theme.primary + '-' + theme.secondary + '.min.css';
     $("#title")[0].innerHTML = theme.name;
-    //TODO translate to hex?
     $("#mobilecolor")[0].content = 'mdl-color--' + theme.primary;
   }
 }
