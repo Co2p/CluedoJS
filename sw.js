@@ -2,16 +2,20 @@ this.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll([
-        '/',
-        '/index.html',
-        '/style.css',
-        '/app.js',
-        '/js.cookie.js',
-        '/sw-test/star-wars-logo.jpg',
-        '/sw-test/gallery/',
-        '/favicon.jpg',
-        '/characterThemes.js'
+        '/CluedoCardJS/',
+        '/CluedoCardJS/index.html',
+        '/CluedoCardJS/style.css',
+        '/CluedoCardJS/app.js',
+        '/CluedoCardJS/js.cookie.js',
+        '/CluedoCardJS/favicon.jpg',
+        '/CluedoCardJS/characterThemes.js'
       ]);
     })
+  );
+});
+
+this.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request)
   );
 });
