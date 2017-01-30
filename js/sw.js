@@ -20,9 +20,9 @@ this.addEventListener('fetch', function(event) {
 
   if (requestURL.hostname == 'co2p.github.com') {
     event.respondWith(
-      caches.match(event.request)
+      caches.match(event.request);
     );
   } else {
-
+    //
   }
 });
