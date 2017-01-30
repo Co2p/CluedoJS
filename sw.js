@@ -16,9 +16,13 @@ this.addEventListener('install', function(event) {
 });
 
 this.addEventListener('fetch', function(event) {
+  var requestURL = new URL(event.request.url);
+
   if (requestURL.hostname == 'co2p.github.com') {
     event.respondWith(
       caches.match(event.request)
     );
+  } else {
+
   }
 });
