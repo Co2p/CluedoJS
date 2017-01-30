@@ -7,7 +7,7 @@ this.addEventListener('install', function(event) {
         '/CluedoCardJS/style.css',
         '/CluedoCardJS/app.js',
         '/CluedoCardJS/js.cookie.js',
-        '/CluedoCardJS/favicon.jpg',
+        '/CluedoCardJS/favicon.png',
         '/CluedoCardJS/characterThemes.js'
       ]);
     })
