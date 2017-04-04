@@ -12,7 +12,7 @@ self.addEventListener('install', function(event) {
         '/CluedoCardJS/js/app.js',
         '/CluedoCardJS/js/js.cookie.js',
         '/CluedoCardJS/js/characterThemes.js',
-        '/CluedoCardJS/favicon.png'
+        '/CluedoCardJS/res/favicon.png'
       ]);
     }).then(()=> {
       console.log('WORKER: install completed');
