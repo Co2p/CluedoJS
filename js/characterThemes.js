@@ -1,4 +1,5 @@
 const themes = {
+  "Default": {"primary": "blue_grey", "secondary": "red", "name": "Default"},
   "Mustard": { "primary": "amber", "secondary": "red" , "name": "Colonel Mustard"},
   "Plum": { "primary": "deep_purple", "secondary": "pink", "name": "Professor Plum"},
   "Green": { "primary": "teal", "secondary": "green", "name": "Reverend Green"},
