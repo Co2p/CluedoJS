@@ -206,7 +206,7 @@
         A simple mobile-first webapp that replaces the suspect cards when playing playing Cluedo (Clue).
       </p>
       <p>
-        Sourcecode is available on <a href="https://github.com/Co2p/CluedoCardJS">GitHub</a>
+        Source code is available on <a href="https://github.com/Co2p/CluedoCardJS">GitHub</a>
         Suggestions and help is welcome.
       </p>
     </div>
@@ -218,7 +218,11 @@
     var dialog = document.querySelector('dialog');
     var showModalButton = document.querySelector('.show-modal');
     if (! dialog.showModal) {
-      dialogPolyfill.registerDialog(dialog);
+      try {
+        dialogPolyfill.registerDialog(dialog);
+      } catch (e) {
+        dialog.style.display = 'none';
+      }
     }
     showModalButton.addEventListener('click', function() {
       dialog.showModal();
