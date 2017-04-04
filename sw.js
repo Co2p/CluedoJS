@@ -1,6 +1,6 @@
 var version = 'v0.1';
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', (event) => {
   console.log('WORKER: install event in progress.');
   event.waitUntil(
     caches.open(version + 'basics').then(function(cache) {
@@ -20,16 +20,11 @@ self.addEventListener('install', function(event) {
   );
 });
 
-self.addEventListener("fetch", function(event) {
+self.addEventListener("fetch", (event) => {
   console.log('WORKER: fetch event in progress.');
 
-  /* We should only cache GET requests, and deal with the rest of method in the
-     client-side, by handling failed POST,PUT,PATCH,etc. requests.
-  */
   if (event.request.method !== 'GET') {
-    /* If we don't block the event as shown below, then the request will go to
-       the network as usual.
-    */
+    /* If we don't block the event as shown below, then the request will go to the network as usual.*/
     console.log('WORKER: fetch event ignored.', event.request.method, event.request.url);
     return;
   }
@@ -38,13 +33,7 @@ self.addEventListener("fetch", function(event) {
      HTTP response indicating failure.
   */
   event.respondWith(
-    caches
-      /* This method returns a promise that resolves to a cache entry matching
-         the request. Once the promise is settled, we can then provide a response
-         to the fetch request.
-      */
-      .match(event.request)
-      .then(function(cached) {
+    caches.match(event.request).then((cached) => {
         /* Even if the response is in our cache, we go to the network as well.
            This pattern is known for producing "eventually fresh" responses,
            where we return cached responses immediately, and meanwhile pull
@@ -82,7 +71,7 @@ self.addEventListener("fetch", function(event) {
               */
               cache.put(event.request, cacheCopy);
             })
-            .then(function() {
+            .then(() => {
               console.log('WORKER: fetch response stored in cache.', event.request.url);
             });
 
@@ -106,7 +95,7 @@ self.addEventListener("fetch", function(event) {
              - Generate a Response programmaticaly, as shown below, and return that
           */
 
-          console.log('WORKER: fetch request failed in both cache and network.');
+          console.log('WORKER: fetch request failed in both cache and network.', event.request.url);
 
           /* Here we're creating a response programmatically. The first parameter is the
              response body, and the second one defines the options for the response.
@@ -119,6 +108,40 @@ self.addEventListener("fetch", function(event) {
             })
           });
         }
+      })
+  );
+});
+
+self.addEventListener("activate", (event) => {
+  /* Just like with the install event, event.waitUntil blocks activate on a promise.
+     Activation will fail unless the promise is fulfilled.
+  */
+  console.log('WORKER: activate event in progress.');
+
+  event.waitUntil(
+    caches
+      /* This method returns a promise which will resolve to an array of available
+         cache keys.
+      */
+      .keys()
+      .then(function (keys) {
+        // We return a promise that settles when all outdated caches are deleted.
+        return Promise.all(
+          keys
+            .filter(function (key) {
+              // Filter by keys that don't start with the latest version prefix.
+              return !key.startsWith(version);
+            })
+            .map(function (key) {
+              /* Return a promise that's fulfilled
+                 when each outdated cache is deleted.
+              */
+              return caches.delete(key);
+            })
+        );
+      })
+      .then(() => {
+        console.log('WORKER: activate completed.');
       })
   );
 });
