@@ -9,9 +9,9 @@ self.addEventListener('install', function(event) {
         '/CluedoCardJS/index.html',
         '/CluedoCardJS/css/style.css',
         '/CluedoCardJS/css/material.blue_grey-red.min.css',
-        '/CluedoCardJS/app.js',
-        '/CluedoCardJS/js.cookie.js',
-        '/CluedoCardJS/characterThemes.js',
+        '/CluedoCardJS/js/app.js',
+        '/CluedoCardJS/js/js.cookie.js',
+        '/CluedoCardJS/js/characterThemes.js',
         '/CluedoCardJS/favicon.png'
       ]);
     }).then(()=> {
