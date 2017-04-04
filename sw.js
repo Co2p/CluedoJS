@@ -15,7 +15,7 @@ self.addEventListener('install', (event) => {
         '/CluedoCardJS/res/favicon.png'
       ]);
     }).then(()=> {
-      console.log('WORKER: install completed');
+      console.log('WORKER: install ' + version +' completed');
     })
   );
 });
