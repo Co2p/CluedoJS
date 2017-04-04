@@ -1,6 +1,9 @@
-this.addEventListener('install', function(event) {
+var version = 'v0.1';
+
+self.addEventListener('install', function(event) {
+  console.log('WORKER: install event in progress.');
   event.waitUntil(
-    caches.open('v1').then(function(cache) {
+    caches.open(version + 'basics').then(function(cache) {
       return cache.addAll([
         '/CluedoCardJS/',
         '/CluedoCardJS/index.html',
@@ -11,13 +14,16 @@ this.addEventListener('install', function(event) {
         '/CluedoCardJS/characterThemes.js',
         '/CluedoCardJS/favicon.png'
       ]);
+    }).then(()=> {
+      console.log('WORKER: install completed');
     })
   );
 });
 
 this.addEventListener('fetch', function(event) {
-  var requestURL = new URL(event.request.url);
+  console.log('WORKER: fetch event in progress.');
 
+  var requestURL = new URL(event.request.url);
   if (requestURL.hostname == 'co2p.github.com') {
     event.respondWith(
       caches.match(event.request);
