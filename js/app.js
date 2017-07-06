@@ -13,6 +13,29 @@ $('i').click((e) => {
   }
 });
 
+let el = document.getElementsByClassName('mdl-layout__content')[0];
+swipedetect(el, (dir) => {
+  console.log(dir);
+  let goto = $('.is-active').attr('href');
+  if (dir == 'left' ) {
+    if (goto == '#suspects') {
+      goto = '#weapons';
+    } else if (goto == '#weapons') {
+      goto = '#rooms';
+    }
+  } else if (dir == 'right') {
+    if (goto == '#weapons') {
+      goto = '#suspects';
+    } else if (goto == '#rooms') {
+      goto = '#weapons';
+    }
+  }
+  $('a.mdl-layout__tab').removeClass('is-active');
+  $('a[href="' + goto + '"]').addClass('is-active');
+  $('.mdl-layout__tab-panel').removeClass('is-active');
+  $(goto).addClass('is-active');
+});
+
 window.onbeforeunload = function() {
   return "";
 }
