@@ -1,4 +1,35 @@
 window.addEventListener('load', () => setTheme(Cookies.get('theme')), false);
+var hammer = new Hammer(document.body);
+var swipe = new Hammer.Swipe();
+
+hammer.add(swipe);
+
+function setTab(tab) {
+  $('a.mdl-layout__tab').removeClass('is-active');
+  $('a[href="' + tab + '"]').addClass('is-active');
+  $('.mdl-layout__tab-panel').removeClass('is-active');
+  $(tab).addClass('is-active');
+}
+
+hammer.on('swipeleft', () => {
+  let goto = $('.is-active').attr('href');
+  if (goto == '#suspects') {
+    goto = '#weapons';
+  } else if (goto == '#weapons') {
+    goto = '#rooms';
+  }
+  setTab(goto);
+});
+
+hammer.on('swiperight', () => {
+  let goto = $('.is-active').attr('href');
+  if (goto == '#weapons') {
+    goto = '#suspects';
+  } else if (goto == '#rooms') {
+    goto = '#weapons';
+  }
+  setTab(goto);
+});
 
 $('i').click((e) => {
   var currentIcon = e.currentTarget.innerHTML;
