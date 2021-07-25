@@ -1,24 +1,27 @@
 const themes = {
-  "Default": {"primary": "blue_grey", "secondary": "red", "name": "Default"},
-  "Mustard": { "primary": "amber", "secondary": "red" , "name": "Colonel Mustard"},
-  "Plum": { "primary": "deep_purple", "secondary": "pink", "name": "Professor Plum"},
-  "Green": { "primary": "teal", "secondary": "green", "name": "Reverend Green"},
-  "Peacock": { "primary": "light_blue", "secondary": "indigo", "name": "Mrs Peacock"},
-  "Scarlett": { "primary": "red", "secondary": "orange", "name": "Miss Scarlett"},
-  "White": { "primary": "grey", "secondary": "light_blue", "name": "Mrs White"}
+  "Default": {"primary": "#607d8b", "accent": "#f44336", "name": "Default"},
+  "Mustard": { "primary": "#ffc107", "accent": "#f44336" , "name": "Colonel Mustard"},
+  "Plum": { "primary": "#673ab7", "accent": "#e91e63", "name": "Professor Plum"},
+  "Green": { "primary": "#009688", "accent": "#4caf50", "name": "Reverend Green"},
+  "Peacock": { "primary": "#03a9f4", "accent": "#3f51b5", "name": "Mrs Peacock"},
+  "Scarlett": { "primary": "#f44336", "accent": "#ff9800", "name": "Miss Scarlett"},
+  "White": { "primary": "#9e9e9e", "accent": "#03a9f4", "name": "Mrs White"}
 }
 
 function setTheme(theme) {
   if (theme != undefined) {
     theme = themes[theme];
-    $("#css")[0].href = 'https://code.getmdl.io/1.3.0/material.' + theme.primary + '-' + theme.secondary + '.min.css';
-    $("#title")[0].innerHTML = theme.name;
-    $("#mobilecolor")[0].content = 'mdl-color--' + theme.primary;
+    document.documentElement.style.setProperty("--color-accent", theme.accent);
+    document.documentElement.style.setProperty("--color-primary", theme.primary);
+    document.getElementById("title").innerHTML = theme.name;
+    document.getElementById("mobilecolor").content = 'mdl-color--' + theme.primary;
   }
 }
 
-$('.set_character').click((e) => {
-  setTheme(e.target.id);
-  Cookies.set('theme', e.target.id, { expires: 60 });
-  console.log(Cookies.get('theme'));
+Array.from(document.getElementsByClassName("set_character")).forEach(e => {
+  e.addEventListener("click", (event) => {
+    setTheme(event.target.id);
+    Cookies.set('theme', event.target.id, { expires: 60 });
+    console.log(Cookies.get('theme'));
+  })
 });
