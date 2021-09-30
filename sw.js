@@ -5,14 +5,15 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(version + 'basics').then(function(cache) {
       return cache.addAll([
-        '/CluedoCardJS/',
-        '/CluedoCardJS/index.html',
-        '/CluedoCardJS/css/style.css',
-        '/CluedoCardJS/css/material.blue_grey-red.min.css',
-        '/CluedoCardJS/js/app.js',
-        '/CluedoCardJS/js/js.cookie.js',
-        '/CluedoCardJS/js/characterThemes.js',
-        '/CluedoCardJS/res/favicon.png'
+        '/',
+        '/index.html',
+        '/css/style.css',
+        '/css/material.blue_grey-red.min.css',
+        '/css/material.min.css',
+        '/js/app.js',
+        '/js/js.cookie.js',
+        '/js/characterThemes.js',
+        '/res/favicon.png'
       ]);
     }).then(()=> {
       console.log('WORKER: install ' + version +' completed');

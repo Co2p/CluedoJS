@@ -30,7 +30,7 @@ document.getElementById("fab").addEventListener("click", (e) => {
 });
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('https://co2p.github.io/CluedoCardJS/sw.js')
+  navigator.serviceWorker.register(`https://cluedo.co2p.se/sw.js`)
   .then(function(reg) {
     // registration worked
     console.log('Registration succeeded. Scope is ' + reg.scope);
